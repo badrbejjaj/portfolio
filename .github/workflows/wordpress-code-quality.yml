@@ -27,7 +27,9 @@ jobs:
           composer global require php-stubs/wordpress-stubs
           composer global require phpcompatibility/phpcompatibility-wp
           composer global require phpcsstandards/phpcsutils
-          ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs
+          # Set up WordPress Coding Standards in PHP CodeSniffer
+          ~/.composer/vendor/bin/phpcs --config-set installed_paths \
+            ~/.composer/vendor/wp-coding-standards/wpcs,~/.composer/vendor/phpcompatibility/php-compatibility,~/.composer/vendor/phpcsstandards/phpcsutils
 
       - name: Run PHP CodeSniffer (WordPress Coding Standards)
         run: |
