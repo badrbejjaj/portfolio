@@ -22,6 +22,7 @@ jobs:
           sudo apt-get install -y php-cli
           composer global require "squizlabs/php_codesniffer=*"
           composer global require wp-coding-standards/wpcs
+          composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs
 
       - name: Run PHP CodeSniffer (WordPress Coding Standards)
